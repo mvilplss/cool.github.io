@@ -1,20 +1,20 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>三行 - 一行知,二行理,三行本</title><meta name="author" content="三行"><meta name="copyright" content="三行"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一行知,二行理,三行本">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>三行 - 一行知,二行理,三行本</title><meta name="author" content="三行"><meta name="copyright" content="三行"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一行知,二行理,三行本">
 <meta property="og:type" content="website">
 <meta property="og:title" content="三行">
 <meta property="og:url" content="http://mvilplss.github.io/page/3/index.html">
 <meta property="og:site_name" content="三行">
 <meta property="og:description" content="一行知,二行理,三行本">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://mvilplss.github.io/null">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="三行">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://mvilplss.github.io/null"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://mvilplss.github.io/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://mvilplss.github.io/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -36,68 +36,21 @@
   lightbox: 'fancybox',
   Snackbar: undefined,
   source: {
-    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
     justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-    },
-    fancybox: {
-      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
   },
   isPhotoFigcaption: false,
   islazyload: false,
-  isanchor: false
-};
-
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
-
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
-
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
-
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}
-
-// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
-const getScript = url => new Promise((resolve, reject) => {
-  const script = document.createElement('script')
-  script.src = url
-  script.async = true
-  script.onerror = reject
-  script.onload = script.onreadystatechange = function() {
-    const loadState = this.readyState
-    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-    script.onload = script.onreadystatechange = null
-    resolve()
-  }
-  document.head.appendChild(script)
-})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '三行',
   isPost: false,
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-07-05 20:33:38'
+  postUpdate: '2022-07-05 20:53:38'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -110,72 +63,96 @@ const getScript = url => new Promise((resolve, reject) => {
   #post-meta time {
     display: inline !important
   }
-</style></noscript><script>(function () {  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-   if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
         const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
         }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }const asideStatus = saveToLocal.get('aside-status')
-if (asideStatus !== undefined) {
-   if (asideStatus === 'hide') {
-     document.documentElement.classList.add('hide-aside')
-   } else {
-     document.documentElement.classList.remove('hide-aside')
-   }
-}})()</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">三行</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">三行</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/mvilplss" target="_blank" title="github"><i class="fa fa-github"></i></a><a class="social-icon" href="mailto:mvilplss@gmail.com" target="_blank" title="envelope"><i class="fa fa-email"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/02/04/Spring%E4%BA%8B%E7%89%A9%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/" title="Spring事物深入研究">     <img class="post_bg" src="https://gitee.com/mvilplss/note/raw/master/image/内部调用未增强.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring事物深入研究"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/02/04/Spring%E4%BA%8B%E7%89%A9%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/" title="Spring事物深入研究">Spring事物深入研究</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-02-03T16:00:00.000Z" title="发表于 2019-02-04 00:00:00">2019-02-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">Spring事务是如何实现的事务类的增强Spring的事务是通对目标类生成增强后的代理类，然后自动在执行目标方法前开启事务，目标方法后关闭事务等。下面是生成代理类的增强拦截器：
-1234567891011121314151617public class TransactionInterceptor extends TransactionAspectSupport implements MethodInterceptor, Serializable &#123;    @Override    &#x2F;&#x2F;实现了MethodInterceptor的invoke方法    public Object invoke(final MethodInvocation invocation) throws Throwable &#123;        &#x2F;&#x2F;获取目标类　　　　 Class&lt;?&gt; targetClass &#x3D; (invocation.getThis() !&#x3D; null ? AopUtils.getTargetClass(in ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/01/04/Mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="Mybatis源码分析">     <img class="post_bg" src="https://gitee.com/mvilplss/note/raw/master/image/mybatis架构.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mybatis源码分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/01/04/Mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="Mybatis源码分析">Mybatis源码分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-01-03T16:00:00.000Z" title="发表于 2019-01-04 00:00:00">2019-01-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">概要本文通过通过jdbc到mybatis查询数据库代码来分析mybatis的优势，同时进一步分析mybatis的源码，分析mybatis的整体架构设计，最后再对mybatis的缓存进行剖析。
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">三行</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">三行</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/mvilplss" target="_blank" title="github"><i class="fa fa-github"></i></a><a class="social-icon" href="mailto:mvilplss@gmail.com" target="_blank" title="envelope"><i class="fa fa-email"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2019/02/04/Spring%E4%BA%8B%E7%89%A9%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/" title="Spring事物深入研究"><img class="post_bg" src="https://gitee.com/mvilplss/note/raw/master/image/内部调用未增强.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring事物深入研究"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/02/04/Spring%E4%BA%8B%E7%89%A9%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/" title="Spring事物深入研究">Spring事物深入研究</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-02-03T16:00:00.000Z" title="发表于 2019-02-04 00:00:00">2019-02-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">Spring事务是如何实现的事务类的增强Spring的事务是通对目标类生成增强后的代理类，然后自动在执行目标方法前开启事务，目标方法后关闭事务等。下面是生成代理类的增强拦截器：
+1234567891011121314151617public class TransactionInterceptor extends TransactionAspectSupport implements MethodInterceptor, Serializable &#123;    @Override    &#x2F;&#x2F;实现了MethodInterceptor的invoke方法    public Object invoke(final MethodInvocation invocation) throws Throwable &#123;        &#x2F;&#x2F;获取目标类　　　　 Class&lt;?&gt; targetClass &#x3D; (invocation.getThis() !&#x3D; null ? AopUtils.getTargetClass(in ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2019/01/04/Mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="Mybatis源码分析"><img class="post_bg" src="https://gitee.com/mvilplss/note/raw/master/image/mybatis架构.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mybatis源码分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/01/04/Mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="Mybatis源码分析">Mybatis源码分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-01-03T16:00:00.000Z" title="发表于 2019-01-04 00:00:00">2019-01-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">概要本文通过通过jdbc到mybatis查询数据库代码来分析mybatis的优势，同时进一步分析mybatis的源码，分析mybatis的整体架构设计，最后再对mybatis的缓存进行剖析。
 JDBC与mybatis下面介绍jdbc和mybatis操作数据库的方式。
 jdbc访问数据库通过jdbc直接操作数据库：
-1234567891011121314151617181920212223242526@Testpublic void jdbcTest() throws Exception&#123;    &#x2F;&#x2F; 1.获取链接    Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test_db&quot;, &quot;root&quot;, &quot;root&quot;);    &#x2F;&#x2F; 2.准备会话    PreparedStatement statement &#x3D; con ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2018/03/03/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%88%86%E6%9E%90/" title="Java之线程池分析">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之线程池分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/03/03/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%88%86%E6%9E%90/" title="Java之线程池分析">Java之线程池分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-03-02T16:00:00.000Z" title="发表于 2018-03-03 00:00:00">2018-03-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">java线程池ThreadPoolExecutor原理线程池构造器的每个参数含义123456789101112131415161718192021222324public ThreadPoolExecutor(int corePoolSize,                          int maximumPoolSize,                          long keepAliveTime,                          TimeUnit unit,                          BlockingQueue&lt;Runnable&gt; workQueue,                          ThreadFactory threadFactory,                          RejectedExecutionHandler handler) &#123;    if (corePoolSize &lt; 0 ||        maximumPoolSize &lt;&#x ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2018/02/04/Java%E4%B9%8BBigDecimal%E7%B2%BE%E5%BA%A6%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="Java之Bigdecimal精度引发的问题">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之Bigdecimal精度引发的问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/02/04/Java%E4%B9%8BBigDecimal%E7%B2%BE%E5%BA%A6%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="Java之Bigdecimal精度引发的问题">Java之Bigdecimal精度引发的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-02-03T16:00:00.000Z" title="发表于 2018-02-04 00:00:00">2018-02-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">BigDecimal精度问题背景案例
+1234567891011121314151617181920212223242526@Testpublic void jdbcTest() throws Exception&#123;    &#x2F;&#x2F; 1.获取链接    Connection connection &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test_db&quot;, &quot;root&quot;, &quot;root&quot;);    &#x2F;&#x2F; 2.准备会话    PreparedStatement statement &#x3D; con ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2018/03/03/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%88%86%E6%9E%90/" title="Java之线程池分析"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之线程池分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/03/03/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%88%86%E6%9E%90/" title="Java之线程池分析">Java之线程池分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-03-02T16:00:00.000Z" title="发表于 2018-03-03 00:00:00">2018-03-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">java线程池ThreadPoolExecutor原理线程池构造器的每个参数含义123456789101112131415161718192021222324public ThreadPoolExecutor(int corePoolSize,                          int maximumPoolSize,                          long keepAliveTime,                          TimeUnit unit,                          BlockingQueue&lt;Runnable&gt; workQueue,                          ThreadFactory threadFactory,                          RejectedExecutionHandler handler) &#123;    if (corePoolSize &lt; 0 ||        maximumPoolSize &lt;&#x ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2018/02/04/Java%E4%B9%8BBigDecimal%E7%B2%BE%E5%BA%A6%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="Java之Bigdecimal精度引发的问题"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之Bigdecimal精度引发的问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/02/04/Java%E4%B9%8BBigDecimal%E7%B2%BE%E5%BA%A6%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="Java之Bigdecimal精度引发的问题">Java之Bigdecimal精度引发的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-02-03T16:00:00.000Z" title="发表于 2018-02-04 00:00:00">2018-02-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">BigDecimal精度问题背景案例
 有一次维护老系统碰到这样一个问题，给定一批车总放款金额，每辆车的实际价格（整数），让根据实际价格的比例进行计算每辆车的放款金额（整数）。
 
 1234解决方案：1.循环每辆车2.前n-1辆车的放款金额&#x3D;总放款金额*当前车的实际价格&#x2F;总实际价格；3.最后一辆车放款金额&#x3D;总放款金额-（n-1)车的总放款金额;
 经过几次测试发现计算没有问题，就发布上线了，安全运行了一百多天，直到有一天出现了最后一辆的放款金额为负数，一个精度问题就发生了（突然想到墨菲定律）！
 通过查看日志和数据的模拟，发现是一个四舍五入的问题，当实际价格/总实际价格的时候，如果结果是0.106经过四舍五入为0.11，这样前面每辆车就会多分配一些放款金额，最终导致（n-1）辆车总放款金额大于给定的总放款金额。
 12最终通过配置BigDecimal的RoundMode，将四舍五入改为了舍去，这样保证n-1辆车都不会出现多算的情况，从而解决问题。    想这种问题在实际开发中很难去发现问题，因此我们用BigDecimal一定要清楚他的API，从而避免不适当的使用。
- ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2018/01/20/Java%E4%B9%8B%E7%BC%96%E8%AF%91%E5%99%A8/" title="Java之编译器">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之编译器"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/01/20/Java%E4%B9%8B%E7%BC%96%E8%AF%91%E5%99%A8/" title="Java之编译器">Java之编译器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-19T16:00:00.000Z" title="发表于 2018-01-20 00:00:00">2018-01-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">写过规则引擎的同学都知道drools语言，我们都通过一个drools容器来加载并执行drools写的各种规则,也玩过通过Java的脚本引擎执行过Javascript代码.这些动态加载并运行代码主要是用于编写不同规则,而非在代码中写满各种ifelse判断.有的开发同学可能会想,Java语言可以作为想动态语言一样使用吗?答案是可以的,下面我们就开始!
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2018/01/20/Java%E4%B9%8B%E7%BC%96%E8%AF%91%E5%99%A8/" title="Java之编译器"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之编译器"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/01/20/Java%E4%B9%8B%E7%BC%96%E8%AF%91%E5%99%A8/" title="Java之编译器">Java之编译器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-19T16:00:00.000Z" title="发表于 2018-01-20 00:00:00">2018-01-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">写过规则引擎的同学都知道drools语言，我们都通过一个drools容器来加载并执行drools写的各种规则,也玩过通过Java的脚本引擎执行过Javascript代码.这些动态加载并运行代码主要是用于编写不同规则,而非在代码中写满各种ifelse判断.有的开发同学可能会想,Java语言可以作为想动态语言一样使用吗?答案是可以的,下面我们就开始!
 简单实现sun公司在jdk1.6后就正式发布了关于Java编译器的API,下面我们直接看一个简单的例子:
-12345678910@Testpublic void simpleCode() throws Exception &#123;    JavaCompiler javaCompiler &#x3D; ToolProvider.getSystemJavaCompiler();    int run &#x3D; javaCompiler.run(null, null, null, &quot;file&#x2F;SimpleBean.java&quot;);    if (run &#x3D;&#x3D; 0) &#123;        ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2018/01/10/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%90/" title="Java之线程分析">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之线程分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/01/10/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%90/" title="Java之线程分析">Java之线程分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-09T16:00:00.000Z" title="发表于 2018-01-10 00:00:00">2018-01-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">java线程线程是操作系统能够进行运算调度的最小单位，它被包含在进程内共享进程范围内的资源(例如内存句柄和文件句柄)，是进程中的实际运作单位，每个线程都有自己的程序计数器(program counter)、栈及局部变量等。我们说的java线程就是jvm程序中执行的线程。
+12345678910@Testpublic void simpleCode() throws Exception &#123;    JavaCompiler javaCompiler &#x3D; ToolProvider.getSystemJavaCompiler();    int run &#x3D; javaCompiler.run(null, null, null, &quot;file&#x2F;SimpleBean.java&quot;);    if (run &#x3D;&#x3D; 0) &#123;        ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2018/01/10/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%90/" title="Java之线程分析"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之线程分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/01/10/Java%E4%B9%8B%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%90/" title="Java之线程分析">Java之线程分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-09T16:00:00.000Z" title="发表于 2018-01-10 00:00:00">2018-01-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">java线程线程是操作系统能够进行运算调度的最小单位，它被包含在进程内共享进程范围内的资源(例如内存句柄和文件句柄)，是进程中的实际运作单位，每个线程都有自己的程序计数器(program counter)、栈及局部变量等。我们说的java线程就是jvm程序中执行的线程。
 java线程的创建Java线程有两个创建方式，可以通过继承Thread，重写run方法来创建。也可以通过实现runnable接口作为构造参数来创建线程。
 参数简介：
 
@@ -183,18 +160,18 @@ ThreadGroup g 线程组，线程需要加到线程组中，方便线程的维护
 Runnable target 可执行目标，指线程开启后要执行的任务。
 String name 线程的名称
 long stackSize 线程栈期望的大小，默认0 忽略大小，可通过Xss参数配置，线程栈的大小影响递归的深度，线程栈越大递归的深度越大。栈大小默认为1024k，可以通过：-XX:+PrintFlagsFinal 打印ThreadStackSize。
-AccessControlContext acc 线程的上下文访问控制 默认null ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2018/01/02/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" title="Java之类加载器">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之类加载器"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/01/02/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" title="Java之类加载器">Java之类加载器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-01T16:00:00.000Z" title="发表于 2018-01-02 00:00:00">2018-01-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">什么是类加载器我们都知道Java程序运行到jvm上，我们把Java源码文件编译为jvm运行的指令，这些指令按照一定格式存在一个文件中-Java class文件，这些class文件如果要运行需要类加载器先加载到虚拟机内存中,然后获取一个java.lang.Class对象。在Java中有三种类加载器：
+AccessControlContext acc 线程的上下文访问控制 默认null ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2018/01/02/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" title="Java之类加载器"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之类加载器"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/01/02/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" title="Java之类加载器">Java之类加载器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-01-01T16:00:00.000Z" title="发表于 2018-01-02 00:00:00">2018-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">什么是类加载器我们都知道Java程序运行到jvm上，我们把Java源码文件编译为jvm运行的指令，这些指令按照一定格式存在一个文件中-Java class文件，这些class文件如果要运行需要类加载器先加载到虚拟机内存中,然后获取一个java.lang.Class对象。在Java中有三种类加载器：
 
 引导类加载器：用来加载jdk的自带类（rt.jar等,可以通过Launcher.getBootstrapClassPath()获取路径.）
 扩展类加载器Launcher.ExtClassLoader：用来加载%JAVA_HOME%/jre/lib/ext下的类。
 应用类加载器Launcher.AppClassLoader：用来加载classpath下的类。
 
 获取不同的类加载器:
-123456@Test   public void javaClassLoader() throws Exception &#123;       log.info(s(Integer.class.getClassLoader()));       log.info(s(NashornGuards.class.g ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2017/01/04/Java%E4%B9%8BHashMap%E5%88%86%E6%9E%90/" title="Java之HashMap分析">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之HashMap分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/01/04/Java%E4%B9%8BHashMap%E5%88%86%E6%9E%90/" title="Java之HashMap分析">Java之HashMap分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-01-03T16:00:00.000Z" title="发表于 2017-01-04 00:00:00">2017-01-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">hashmap分析前准备
+123456@Test   public void javaClassLoader() throws Exception &#123;       log.info(s(Integer.class.getClassLoader()));       log.info(s(NashornGuards.class.g ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2017/01/04/Java%E4%B9%8BHashMap%E5%88%86%E6%9E%90/" title="Java之HashMap分析"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之HashMap分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/01/04/Java%E4%B9%8BHashMap%E5%88%86%E6%9E%90/" title="Java之HashMap分析">Java之HashMap分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-01-03T16:00:00.000Z" title="发表于 2017-01-04 00:00:00">2017-01-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="content">hashmap分析前准备
 当前jdk版本：jdk1.8
 
 为了更好的研究hashmap的数据结构，我们写了个hashmap反射函数，可以打印出当前数据存放结构可视化和各项属性参数，这样可以帮助我们展示hashmap对象的具体情况和参数，下面是源码。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384@Testpublic void hashMapRefectionStudy() throws Exception &#123;    &#x2F;&#x2F; 初始化map    Map&lt;Integer, String&gt; map &#x3D; new HashMap&lt;&gt;();    for (int i &#x3D; 0; i &lt; 15; i++) &#123;        map.put((i ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2017/01/02/Hello%20Bolg/" title="Hello Bolg">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello Bolg"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/01/02/Hello%20Bolg/" title="Hello Bolg">Hello Bolg</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-01-01T16:00:00.000Z" title="发表于 2017-01-02 00:00:00">2017-01-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/">开发日常</a></span></div><div class="content">hexo install安装brew1&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384@Testpublic void hashMapRefectionStudy() throws Exception &#123;    &#x2F;&#x2F; 初始化map    Map&lt;Integer, String&gt; map &#x3D; new HashMap&lt;&gt;();    for (int i &#x3D; 0; i &lt; 15; i++) &#123;        map.put((i ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2017/01/02/Hello%20Bolg/" title="Hello Bolg"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello Bolg"></a></div><div class="recent-post-info"><a class="article-title" href="/2017/01/02/Hello%20Bolg/" title="Hello Bolg">Hello Bolg</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-01-01T16:00:00.000Z" title="发表于 2017-01-02 00:00:00">2017-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/">开发日常</a></span></div><div class="content">hexo install安装brew1&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;
 安装git1brew install git
 安装node1brew install node
 安装hexo1npm install -g hexo-cli
@@ -209,7 +186,11 @@ Run server1$ hexo server
 More info: Server
 Generate static files1$ hexo generate
 
-More info: G ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">三行</div><div class="author-info__description">一行知,二行理,三行本</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mvilplss" target="_blank" title="github"><i class="fa fa-github"></i></a><a class="social-icon" href="mailto:mvilplss@gmail.com" target="_blank" title="envelope"><i class="fa fa-email"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">开发技术</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">开发日常</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">网络技术</span><span class="card-category-list-count">1</span></a></li>
+More info: G ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">三行</div><div class="author-info__description">一行知,二行理,三行本</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mvilplss" target="_blank" title="github"><i class="fa fa-github"></i></a><a class="social-icon" href="mailto:mvilplss@gmail.com" target="_blank" title="envelope"><i class="fa fa-email"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
             
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/ElasticSearch/" style="font-size: 1.2em; color: #999da3">ElasticSearch</a> <a href="/tags/LogStash/" style="font-size: 1.1em; color: #999">LogStash</a> <a href="/tags/Mybatis/" style="font-size: 1.1em; color: #999">Mybatis</a> <a href="/tags/Spring/" style="font-size: 1.1em; color: #999">Spring</a> <a href="/tags/dubbo/" style="font-size: 1.4em; color: #99a5b6">dubbo</a> <a href="/tags/java/" style="font-size: 1.5em; color: #99a9bf">java</a> <a href="/tags/redis/" style="font-size: 1.1em; color: #999">redis</a> <a href="/tags/tcp/" style="font-size: 1.1em; color: #999">tcp</a> <a href="/tags/udp/" style="font-size: 1.1em; color: #999">udp</a> <a href="/tags/%E4%BA%8B%E5%8A%A1/" style="font-size: 1.1em; color: #999">事务</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">开发工具</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" style="font-size: 1.3em; color: #99a1ac">电脑技巧</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 三行</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">开发技术</span><span class="card-category-list-count">22</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">开发日常</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">网络技术</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/ElasticSearch/" style="font-size: 1.2em; color: #999da3">ElasticSearch</a> <a href="/tags/LogStash/" style="font-size: 1.1em; color: #999">LogStash</a> <a href="/tags/Mybatis/" style="font-size: 1.1em; color: #999">Mybatis</a> <a href="/tags/Spring/" style="font-size: 1.1em; color: #999">Spring</a> <a href="/tags/dubbo/" style="font-size: 1.4em; color: #99a5b6">dubbo</a> <a href="/tags/java/" style="font-size: 1.5em; color: #99a9bf">java</a> <a href="/tags/redis/" style="font-size: 1.1em; color: #999">redis</a> <a href="/tags/tcp/" style="font-size: 1.1em; color: #999">tcp</a> <a href="/tags/udp/" style="font-size: 1.1em; color: #999">udp</a> <a href="/tags/%E4%BA%8B%E5%8A%A1/" style="font-size: 1.1em; color: #999">事务</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">开发工具</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/" style="font-size: 1.3em; color: #99a1ac">电脑技巧</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 三行</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
