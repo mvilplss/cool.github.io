@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Docker搭建rocketmq环境 | 三行</title><meta name="keywords" content="docker"><meta name="author" content="三行"><meta name="copyright" content="三行"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Docker搭建rocketmq环境搜索rocketmq镜像1docker search rocketmq 结果如下：我这里选择了apache&#x2F;rocketmq 镜像 1docker pull apache&#x2F;rocketmq  创建namesrv容器创建本地目录，用来将容器的日志挂载到本地，方便日志查看 1mkdir -p &#x2F;Users&#x2F;atomic&#x2F;doc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker搭建rocketmq环境">
+<meta property="og:url" content="http://mvilplss.github.io/2022/08/08/Docker%E6%90%AD%E5%BB%BArocketmq%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="三行">
+<meta property="og:description" content="Docker搭建rocketmq环境搜索rocketmq镜像1docker search rocketmq 结果如下：我这里选择了apache&#x2F;rocketmq 镜像 1docker pull apache&#x2F;rocketmq  创建namesrv容器创建本地目录，用来将容器的日志挂载到本地，方便日志查看 1mkdir -p &#x2F;Users&#x2F;atomic&#x2F;doc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/mvilplss/note/master/image/docker_s1.png">
+<meta property="article:published_time" content="2022-08-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-14T10:49:48.800Z">
+<meta property="article:author" content="三行">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/mvilplss/note/master/image/docker_s1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://mvilplss.github.io/2022/08/08/Docker%E6%90%AD%E5%BB%BArocketmq%E7%8E%AF%E5%A2%83/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Docker搭建rocketmq环境',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-14 18:49:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/mvilplss/note/master/image/docker_s1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">三行</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Docker搭建rocketmq环境</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-08-07T16:00:00.000Z" title="发表于 2022-08-08 00:00:00">2022-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/">开发技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Docker搭建rocketmq环境"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/08/08/Docker%E6%90%AD%E5%BB%BArocketmq%E7%8E%AF%E5%A2%83/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Docker搭建rocketmq环境"><a href="#Docker搭建rocketmq环境" class="headerlink" title="Docker搭建rocketmq环境"></a>Docker搭建rocketmq环境</h1><h2 id="搜索rocketmq镜像"><a href="#搜索rocketmq镜像" class="headerlink" title="搜索rocketmq镜像"></a>搜索rocketmq镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search rocketmq</span><br></pre></td></tr></table></figure>
+<p>结果如下：<br><img src="img.png" alt="https://raw.githubusercontent.com/mvilplss/note/master/image/docker_s1.png"><br>我这里选择了apache/rocketmq 镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull apache&#x2F;rocketmq</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建namesrv容器"><a href="#创建namesrv容器" class="headerlink" title="创建namesrv容器"></a>创建namesrv容器</h2><p>创建本地目录，用来将容器的日志挂载到本地，方便日志查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;namesrv&#x2F;logs</span><br></pre></td></tr></table></figure>
+<p>创建并启动namesrv容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9876:9876 \</span><br><span class="line"> -v &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;namesrv&#x2F;logs:&#x2F;home&#x2F;rocketmq&#x2F;logs \</span><br><span class="line"> --name mqnamesrv \</span><br><span class="line"> -e &quot;MAX_POSSIBLE_HEAP&#x3D;100000000&quot; \</span><br><span class="line"> -e &quot;JAVA_OPTS&#x3D;-Duser.home&#x3D;&#x2F;opt&quot; \</span><br><span class="line"> -e &quot;JAVA_OPT_EXT&#x3D;-server -Xmx1024m -Xms1024m&quot; \</span><br><span class="line"> apache&#x2F;rocketmq sh mqnamesrv</span><br></pre></td></tr></table></figure>
+<h2 id="创建broker容器"><a href="#创建broker容器" class="headerlink" title="创建broker容器"></a>创建broker容器</h2><p>同样创建本地对应目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;broker&#x2F;logs</span><br><span class="line">mkdir -p &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;broker&#x2F;logs</span><br><span class="line">mkdir -p &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;broker&#x2F;store</span><br></pre></td></tr></table></figure>
+<p>在/Users/atomic/docker/rocketmq目录下创建broker.conf配置，内容如下：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">brokerClusterName</span> = <span class="string">DefaultCluster</span></span><br><span class="line"><span class="attr">brokerName</span> = <span class="string">broker-a</span></span><br><span class="line"><span class="attr">brokerId</span> = <span class="string">0</span></span><br><span class="line"><span class="attr">deleteWhen</span> = <span class="string">04</span></span><br><span class="line"><span class="attr">fileReservedTime</span> = <span class="string">48</span></span><br><span class="line"><span class="attr">brokerRole</span> = <span class="string">ASYNC_MASTER</span></span><br><span class="line"><span class="attr">flushDiskType</span> = <span class="string">ASYNC_FLUSH</span></span><br><span class="line"><span class="comment">#换成link名称（注意）</span></span><br><span class="line"><span class="attr">namesrvAddr</span> = <span class="string">mqnamesrv:9876</span></span><br><span class="line"><span class="comment">#brokerIP1 = mqbroker</span></span><br><span class="line"><span class="comment">#是否允许 Broker 自动创建Topic，建议线下开启，线上关闭 </span></span><br><span class="line"><span class="attr">autoCreateTopicEnable</span>=<span class="string">true</span></span><br><span class="line"><span class="comment">#是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭 </span></span><br><span class="line"><span class="attr">autoCreateSubscriptionGroup</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+<p>创建并启动broker容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -d  -p 10911:10911 -p 10909:10909 -p 10912:10912 \</span><br><span class="line">--link mqnamesrv:mqnamesrv \</span><br><span class="line">-v &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;broker&#x2F;logs:&#x2F;home&#x2F;rocketmq&#x2F;logs \</span><br><span class="line">-v &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;broker&#x2F;store:&#x2F;home&#x2F;rocketmq&#x2F;store  \</span><br><span class="line">-v &#x2F;Users&#x2F;atomic&#x2F;docker&#x2F;rocketmq&#x2F;broker&#x2F;broker.conf:&#x2F;home&#x2F;rocketmq&#x2F;broker.conf  \</span><br><span class="line">--name mqbroker \</span><br><span class="line">-e &quot;JAVA_OPTS&#x3D;-Duser.home&#x3D;&#x2F;opt&quot; \</span><br><span class="line">-e &quot;JAVA_OPT_EXT&#x3D;-server -Xms1024m -Xmx1024m&quot;  \</span><br><span class="line">apache&#x2F;rocketmq sh mqbroker -c &#x2F;home&#x2F;rocketmq&#x2F;broker.conf</span><br></pre></td></tr></table></figure>
+<h2 id="创建dashboard容器"><a href="#创建dashboard容器" class="headerlink" title="创建dashboard容器"></a>创建dashboard容器</h2><p>搜索rocketmq-dashboard</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search rocketmq-dashboard</span><br></pre></td></tr></table></figure>
+<p>这里也是用的Apache的apacherocketmq/rocketmq-dashboard镜像，下载镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull apacherocketmq&#x2F;rocketmq-dashboard</span><br></pre></td></tr></table></figure>
+<p>创建并启动dashboard镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name mqdashboard \</span><br><span class="line">-p 9993:9993 \</span><br><span class="line">--link mqnamesrv:mqnamesrv \</span><br><span class="line">-e &quot;JAVA_OPTS&#x3D;-Drocketmq.namesrv.addr&#x3D;mqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel&#x3D;false -Dserver.port&#x3D;9993&quot; \</span><br><span class="line">-t apacherocketmq&#x2F;rocketmq-dashboard:latest</span><br></pre></td></tr></table></figure>
+<p>控制台访问地址：<a target="_blank" rel="noopener" href="http://localhost:9993/">http://localhost:9993</a></p>
+<p>到此，我们的rocketmq环境安装完毕，如果你使用mac本地的脚本发送MQ消息会遇到发送失败，类似以下错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">org.apache.rocketmq.remoting.exception.RemotingTooMuchRequestException: sendDefaultImpl call timeout</span><br><span class="line"></span><br><span class="line">	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendDefaultImpl(DefaultMQProducerImpl.java:667)</span><br><span class="line">	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:1343)</span><br><span class="line">	at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:1289)</span><br><span class="line">	at org.apache.rocketmq.client.producer.DefaultMQProducer.send(DefaultMQProducer.java:325)</span><br></pre></td></tr></table></figure>
+<p>不要着急，这篇文章给出了详细解决方案：Mac宿主机访问Docker容器网络.md<br>地址：<a href="https://mvilplss.github.io/2022/08/08/Mac%E5%AE%BF%E4%B8%BB%E6%9C%BA%E8%AE%BF%E9%97%AEDocker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C/">https://mvilplss.github.io/2022/08/08/Mac宿主机访问Docker容器网络/</a></p>
+<p>参考文章</p>
+<ul>
+<li>Docker安装RocketMQ <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038704231">https://segmentfault.com/a/1190000038704231</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://mvilplss.github.io">三行</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://mvilplss.github.io/2022/08/08/Docker%E6%90%AD%E5%BB%BArocketmq%E7%8E%AF%E5%A2%83/">http://mvilplss.github.io/2022/08/08/Docker%E6%90%AD%E5%BB%BArocketmq%E7%8E%AF%E5%A2%83/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://mvilplss.github.io" target="_blank">三行</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker/">docker</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/mvilplss/note/master/image/docker_s1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/08/Mac%E5%AE%BF%E4%B8%BB%E6%9C%BA%E8%AE%BF%E9%97%AEDocker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C/"><img class="next-cover" src="https://github.com/mvilplss/note/blob/master/image/cover.png?raw=true" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Mac宿主机访问Docker容器网络</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">三行</div><div class="author-info__description">一行知,二行理,三行本</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mvilplss"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E6%90%AD%E5%BB%BArocketmq%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">Docker搭建rocketmq环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2rocketmq%E9%95%9C%E5%83%8F"><span class="toc-number">1.1.</span> <span class="toc-text">搜索rocketmq镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAnamesrv%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">创建namesrv容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAbroker%E5%AE%B9%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">创建broker容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAdashboard%E5%AE%B9%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">创建dashboard容器</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '9495d2eecf53a9dd3512',
+      clientSecret: '10aba3992e32ecab22e8cb34eae29b997af70b3a',
+      repo: 'mvilplss.github.io',
+      owner: 'mvilplss',
+      admin: ['mvilplss'],
+      id: '2313746268cda9ca523c0709303e4aec',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
